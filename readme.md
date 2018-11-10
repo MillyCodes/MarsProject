@@ -8,4 +8,10 @@
 
 ### Built With
 
-I am choosing to work with simple html, css and javascript due to the time constraints and hopefully will have a fully implemented React view. This project is pulling information from a given api
+I am choosing to work with simple html, css and javascript due to the time constraints and hopefully will have a fully implemented React view. This project is pulling information from a given api and I had trouble with it so I just did a simple api call.
+
+### Tradeoffs
+
+In approaching the challenge it was extremely important to read over the task carefully in order to understand the challenge. The planning took longer than ideal and as a result the javascript and styling suffered a bit but I style tried to give styling a good design.
+
+## Thank you!
