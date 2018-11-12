@@ -1,6 +1,6 @@
 ## Mars Discovery Project
 
-#### Link to live demo, coming soon..
+#### Link to live demo: [Live on Netlify](https://tender-visvesvaraya-4324e1.netlify.com)
 
 ### Introduction
 
