@@ -8,10 +8,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     height: calc(100vh - 50px);
-    color: white;
-}
-
-p {
+    color: rgb(243, 219, 219);
     font-family: "Suez One", serif;
 }
 
@@ -21,27 +18,27 @@ h1 {
     margin: 2px;
 }
 
-.main-wrapper {
+.wrapper {
     padding: 10px 50px;
     display: flex;
 }
 
 .titles {
-    margin: 20px auto;
     display: flex;
     flex-direction: column;
+    margin: 20px auto;
 }
 
-#main-grid {
+#grid {
     background-color: rgba(208, 139, 218, 0.5);
+    border-color: black;
+    box-shadow: 0 0 20px rgb(221, 221, 221);
+    border: 1px solid grey;
+    border-radius: 5px;
     width: 600px;
     height: 600px;
     position: relative;
     margin: 20px auto;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    box-shadow: 0 0 20px rgb(221, 221, 221);
 }
 
 .node {
@@ -51,8 +48,7 @@ h1 {
     position: absolute;
     z-index: 1;
     border-radius: 50%;
-
-    border: 1px solid black;
+    border: 1px solid rgb(56, 55, 55);
 }
 
 .bot {
@@ -62,28 +58,38 @@ h1 {
     position: absolute;
     opacity: 0.5;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid rgb(56, 55, 55);
     transition-duration: 1s;
     z-index: 2;
 }
-
-#nodeinfo,
-#botinfo {
-    width: 300px;
+#bots {
+    background-color: rgba(208, 139, 218, 0.5);
+    border-color: black;
+    box-shadow: 0 0 20px rgb(221, 221, 221);
+    border: 1px solid grey;
+    border-radius: 6px;
+    width: 90%;
+    margin: 10px;
+    padding: 15px;
 }
 
-#nodeinfo h4,
-#botinfo h4 {
+#bots h4 {
+    text-decoration: underline;
+    line-height: 2em;
     font-weight: 400;
-    color: rgb(255, 140, 110);
+}
+
+#bots li {
+    line-height: 2em;
+    list-style-type: none;
 }
 
 .legend {
-    width: 300px;
+    width: 280px;
     height: 30px;
     align-items: center;
 }
 
 .legend p {
-    padding-left: 40px;
+    padding-left: 35px;
 }

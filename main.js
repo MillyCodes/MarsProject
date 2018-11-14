@@ -17,6 +17,7 @@ createBots.onreadystatechange = function() {
     }
 
     for (i = 0; i < data.Bots.length; i++) {
+        console.log(data);
         var newDiv = document.createElement("div");
         newDiv.setAttribute(
             "style",
@@ -27,18 +28,13 @@ createBots.onreadystatechange = function() {
         );
         newDiv.setAttribute("class", "bot");
         newDiv.setAttribute("id", data.Bots[i].Id);
-        newDiv.setAttribute(
-            "onClick",
-            `
-    document.getElementById('botinfo').innerHTML="<h4>BOT INFO</h4><b>${
-        data.Bots[i].Id
-    }</b><br>Number of Claims: ${data.Bots[i].Claims.length} <br>Score: ${
-                data.Bots[i].Score
-            } <br>";
-    `
-        );
+        document.getElementById("grid").appendChild(newDiv);
 
-        document.getElementById("main-grid").appendChild(newDiv);
+        var newList = document.createElement("li");
+        newList.id = data.Bots[i];
+        newList.innerHTML =
+            data.Bots[i]["Id"] + " - Score " + data.Bots[i]["Score"];
+        document.getElementById("bots").appendChild(newList);
     }
 };
 createBots.open("GET", botApi, true);
@@ -50,7 +46,6 @@ createNodes.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var data = JSON.parse(this.responseText);
     }
-
     for (i = 0; data.Nodes.length; i++) {
         var newDiv = document.createElement("div");
         newDiv.setAttribute(
@@ -58,20 +53,12 @@ createNodes.onreadystatechange = function() {
             `
       left: ${data.Nodes[i].Location.X * perNode}px;
       bottom: ${data.Nodes[i].Location.Y * perNode}px;
-      `
+    `
         );
         newDiv.setAttribute("class", "node");
         newDiv.setAttribute("id", "node" + i);
-        newDiv.setAttribute(
-            "onClick",
-            `
-      document.getElementById('nodeinfo').innerHTML="<h4>NODE INFO</h4>Node Value: ${
-          data.Nodes[i].Value
-      }</b><br>Claimed By: ${data.Nodes[i].ClaimedBy} <br>";
-      `
-        );
 
-        document.getElementById("main-grid").appendChild(newDiv);
+        document.getElementById("grid").appendChild(newDiv);
     }
 };
 createNodes.open("GET", nodeApi, true);
@@ -84,7 +71,6 @@ setInterval(function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
         }
-
         for (i = 0; i < data.Bots.length; i++) {
             var botNode = document.getElementById(data.Bots[i].Id);
             botNode.setAttribute(
@@ -92,7 +78,7 @@ setInterval(function() {
                 `
       left: ${data.Bots[i].Location.X * perNode}px;
       bottom: ${data.Bots[i].Location.Y * perNode}px;
-      `
+    `
             );
         }
     };
